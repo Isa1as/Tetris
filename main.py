@@ -24,17 +24,18 @@ def tetris():
 
     while(True):
         event = keyboard.read_event()
-           if event.name == "esc":
+        if event.name == "esc":
             break
         elif event.event_type == keyboard.KEY_DOWN:
             if event.name == "flecha abajo":
                 (screen, rotation)= move_piece(screen, Movement.DOWN, rotation)
             elif event.name == "flecha derecha":
-                    (screen, rotation) = move_piece(screen, Movement.RIGHT, rotation)
+                (screen, rotation) = move_piece(screen, Movement.RIGHT, rotation)
             elif event.name == "flecha izquierda":
                 (screen, rotation)= move_piece(screen, Movement.LEFT, rotation)
             elif event.name == "space":
                 (screen, rotation)= move_piece(screen, Movement.ROTATE, rotation)
+
 
 def move_piece(screen: list, movement: Movement, rotation: int) -> (list, int):
     new_screen = [["🔲"] * 10 for _ in range(10)]
